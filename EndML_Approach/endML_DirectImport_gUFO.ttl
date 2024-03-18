@@ -1,0 +1,312 @@
+@prefix : <http://www.greco.ufrj.br/endml#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gufo: <http://purl.org/nemo/gufo> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.greco.ufrj.br/endml> .
+
+<http://www.greco.ufrj.br/endml> rdf:type owl:Ontology ;
+                                  owl:versionIRI <http://www.greco.ufrj.br/endml#/1.0.0> ;
+                                  owl:imports <https://purl.org/nemo/gufo#/1.0.0> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.greco.ufrj.br/endml#characterizes
+:characterizes rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :AspectType ;
+               rdfs:range <http://purl.org/nemo/gufo#Type> .
+
+
+###  http://www.greco.ufrj.br/endml#isPowertypeOf
+:isPowertypeOf rdf:type owl:ObjectProperty ;
+               rdfs:domain :HighOrderType ;
+               rdfs:comment "The principle of application of t1 defines that its instances applies to instances of t2 but does not define a classification criteria. Thus, the extension of t1 is composed by all specializations of t2, including t2 itself." ;
+               rdfs:label "isPowertypeOf"@en .
+
+
+###  http://www.greco.ufrj.br/endml#isSubordinatedTo
+:isSubordinatedTo rdf:type owl:ObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Restriction ;
+                                owl:onProperty :isSubordinatedTo ;
+                                owl:someValuesFrom :FirstOrderType
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :isSubordinatedTo ;
+                                owl:someValuesFrom :SecondOrderType
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :isSubordinatedTo ;
+                                owl:someValuesFrom :ThirdOrderType
+                              ] ;
+                  rdfs:comment """The principle of application of each instance of t1 adds some classification criteria to the principle of application of some instance of t2 i.e. every instance of t1 proper specializes some instance of t2.
+Domain and Range: Higher-order types of the same order (instances of 2ndOT or 3rdOT).""" ;
+                  rdfs:label "isSubordinatedTo"@en .
+
+
+###  http://www.greco.ufrj.br/endml#mediation
+:mediation rdf:type owl:ObjectProperty ;
+           rdfs:domain :RelatorType ;
+           rdfs:range <http://purl.org/nemo/gufo#EndurantType> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/nemo/gufo#ConcreteIndividualType
+<http://purl.org/nemo/gufo#ConcreteIndividualType> rdfs:subClassOf :FirstOrderType .
+
+
+###  http://purl.org/nemo/gufo#Type
+<http://purl.org/nemo/gufo#Type> owl:disjointUnionOf ( :FirstOrderType
+                                                       :HighOrderType
+                                                     ) .
+
+
+###  http://www.greco.ufrj.br/endml#AspectType
+:AspectType rdf:type owl:Class ;
+            rdfs:subClassOf <http://purl.org/nemo/gufo#EndurantType> ;
+            owl:disjointWith :ObjectType ;
+            owl:disjointUnionOf ( :ExtrinsicAspectType
+                                  :IntrinsicAspectType
+                                ) ;
+            rdfs:label "AspectType"@en .
+
+
+###  http://www.greco.ufrj.br/endml#CollectionType
+:CollectionType rdf:type owl:Class ;
+                rdfs:subClassOf :ObjectType ;
+                owl:disjointUnionOf ( :FixedCollectionType
+                                      :VariableCollectionType
+                                    ) ;
+                rdfs:label "CollectionType"@en .
+
+
+###  http://www.greco.ufrj.br/endml#ExtrinsicAspectType
+:ExtrinsicAspectType rdf:type owl:Class ;
+                     rdfs:subClassOf :AspectType ;
+                     owl:disjointWith :IntrinsicAspectType ;
+                     owl:disjointUnionOf ( :ExtrinsicModeType
+                                           :RelatorType
+                                         ) ;
+                     rdfs:label "ExtrinsicAspectType"@en .
+
+
+###  http://www.greco.ufrj.br/endml#ExtrinsicModeType
+:ExtrinsicModeType rdf:type owl:Class ;
+                   rdfs:subClassOf :ExtrinsicAspectType ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :characterizes ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass <http://purl.org/nemo/gufo#ConcreteIndividualType>
+                                   ] ;
+                   owl:disjointWith :RelatorType ;
+                   rdfs:label "ExtrinsicModeType"@en ;
+                   rdfs:seeAlso <http://purl.org/nemo/gufo#externallyDependsOn> ,
+                                :characterizes .
+
+
+###  http://www.greco.ufrj.br/endml#FirstOrderType
+:FirstOrderType rdf:type owl:Class ;
+                rdfs:subClassOf <http://purl.org/nemo/gufo#Type> ;
+                owl:disjointWith :HighOrderType .
+
+
+###  http://www.greco.ufrj.br/endml#FixedCollectionType
+:FixedCollectionType rdf:type owl:Class ;
+                     rdfs:subClassOf :CollectionType ;
+                     owl:disjointWith :VariableCollectionType ;
+                     rdfs:label "FixedCollectionType"@en ;
+                     rdfs:seeAlso <http://purl.org/nemo/gufo#isCollectionMemberOf> ,
+                                  <http://purl.org/nemo/gufo#isSubCollectionOf> .
+
+
+###  http://www.greco.ufrj.br/endml#FunctionalComplexType
+:FunctionalComplexType rdf:type owl:Class ;
+                       rdfs:subClassOf :ObjectType ;
+                       rdfs:label "FunctionalComplexType"@en ;
+                       rdfs:seeAlso <http://purl.org/nemo/gufo#TemporaryParthoodSituation> .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderAntiRigidType
+:HighOrderAntiRigidType rdf:type owl:Class ;
+                        rdfs:subClassOf :HighOrderNonRigidType ;
+                        owl:disjointWith :HighOrderSemiRigidType ;
+                        rdfs:label "HighOrderAntiRigidType"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderCategory
+:HighOrderCategory rdf:type owl:Class ;
+                   rdfs:subClassOf :HighOrderNonSortal ,
+                                   :HighOrderRigidType ;
+                   rdfs:label "HighOrderCategory"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderKind
+:HighOrderKind rdf:type owl:Class ;
+               rdfs:subClassOf :HighOrderRigidType ,
+                               :HighOrderSortal ;
+               owl:disjointWith :HighOrderSubKind ;
+               rdfs:label "HighOrderKind"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderMixin
+:HighOrderMixin rdf:type owl:Class ;
+                rdfs:subClassOf :HighOrderNonSortal ,
+                                :HighOrderSemiRigidType ;
+                rdfs:label "HighOrderMixin"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderNonRigidType
+:HighOrderNonRigidType rdf:type owl:Class ;
+                       rdfs:subClassOf :HighOrderType ;
+                       owl:disjointWith :HighOrderRigidType ;
+                       owl:disjointUnionOf ( :HighOrderAntiRigidType
+                                             :HighOrderSemiRigidType
+                                           ) ;
+                       rdfs:label "HighOrderNonRigidType"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderNonSortal
+:HighOrderNonSortal rdf:type owl:Class ;
+                    rdfs:subClassOf :HighOrderType ;
+                    owl:disjointWith :HighOrderSortal ;
+                    rdfs:label "HighOrderNonSortal"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderPhase
+:HighOrderPhase rdf:type owl:Class ;
+                rdfs:subClassOf :HighOrderAntiRigidType ,
+                                :HighOrderSortal ;
+                owl:disjointWith :HighOrderRole ;
+                rdfs:label "HighOrderPhase"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderPhaseMixin
+:HighOrderPhaseMixin rdf:type owl:Class ;
+                     rdfs:subClassOf :HighOrderAntiRigidType ,
+                                     :HighOrderNonSortal ;
+                     owl:disjointWith :HighOrderRoleMixin ;
+                     rdfs:label "HighOrderPhaseMixin"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderRigidType
+:HighOrderRigidType rdf:type owl:Class ;
+                    rdfs:subClassOf :HighOrderType ;
+                    rdfs:label "HighOrderRigidType"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderRole
+:HighOrderRole rdf:type owl:Class ;
+               rdfs:subClassOf :HighOrderAntiRigidType ,
+                               :HighOrderSortal ;
+               rdfs:label "HighOrderRole"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderRoleMixin
+:HighOrderRoleMixin rdf:type owl:Class ;
+                    rdfs:subClassOf :HighOrderAntiRigidType ,
+                                    :HighOrderNonSortal ;
+                    rdfs:label "HighOrderRoleMixin"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderSemiRigidType
+:HighOrderSemiRigidType rdf:type owl:Class ;
+                        rdfs:subClassOf :HighOrderNonRigidType ;
+                        rdfs:label "HighOrderSemiRigidType"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderSortal
+:HighOrderSortal rdf:type owl:Class ;
+                 rdfs:subClassOf :HighOrderType ;
+                 rdfs:label "HighOrderSortal"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderSubKind
+:HighOrderSubKind rdf:type owl:Class ;
+                  rdfs:subClassOf :HighOrderRigidType ,
+                                  :HighOrderSortal ;
+                  rdfs:label "HighOrderSubKind"@en .
+
+
+###  http://www.greco.ufrj.br/endml#HighOrderType
+:HighOrderType rdf:type owl:Class ;
+               rdfs:subClassOf <http://purl.org/nemo/gufo#Type> .
+
+
+###  http://www.greco.ufrj.br/endml#IntrinsicAspectType
+:IntrinsicAspectType rdf:type owl:Class ;
+                     rdfs:subClassOf :AspectType ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :characterizes ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass <http://purl.org/nemo/gufo#ConcreteIndividualType>
+                                     ] ;
+                     owl:disjointUnionOf ( :IntrinsicModeType
+                                           :QualityType
+                                         ) ;
+                     rdfs:label "IntrinsicAspectType"@en ;
+                     rdfs:seeAlso :characterizes .
+
+
+###  http://www.greco.ufrj.br/endml#IntrinsicModeType
+:IntrinsicModeType rdf:type owl:Class ;
+                   rdfs:subClassOf :IntrinsicAspectType ;
+                   owl:disjointWith :QualityType ;
+                   rdfs:label "IntrinsicModeType"@en .
+
+
+###  http://www.greco.ufrj.br/endml#ObjectType
+:ObjectType rdf:type owl:Class ;
+            rdfs:subClassOf <http://purl.org/nemo/gufo#EndurantType> ;
+            rdfs:label "ObjectType"@en .
+
+
+###  http://www.greco.ufrj.br/endml#QualityType
+:QualityType rdf:type owl:Class ;
+             rdfs:subClassOf :IntrinsicAspectType ;
+             rdfs:label "QualityType"@en .
+
+
+###  http://www.greco.ufrj.br/endml#QuantityType
+:QuantityType rdf:type owl:Class ;
+              rdfs:subClassOf :ObjectType ;
+              rdfs:label "QuantityType"@en ;
+              rdfs:seeAlso <http://purl.org/nemo/gufo#isSubQuantityOf> .
+
+
+###  http://www.greco.ufrj.br/endml#RelatorType
+:RelatorType rdf:type owl:Class ;
+             rdfs:subClassOf :ExtrinsicAspectType ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :mediation ;
+                               owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                               owl:onClass <http://purl.org/nemo/gufo#EndurantType>
+                             ] ;
+             rdfs:label "RelatorType"@en ;
+             rdfs:seeAlso <http://purl.org/nemo/gufo#mediates> .
+
+
+###  http://www.greco.ufrj.br/endml#SecondOrderType
+:SecondOrderType rdf:type owl:Class ;
+                 rdfs:subClassOf :HighOrderType ;
+                 owl:disjointWith :ThirdOrderType .
+
+
+###  http://www.greco.ufrj.br/endml#ThirdOrderType
+:ThirdOrderType rdf:type owl:Class ;
+                rdfs:subClassOf :HighOrderType .
+
+
+###  http://www.greco.ufrj.br/endml#VariableCollectionType
+:VariableCollectionType rdf:type owl:Class ;
+                        rdfs:subClassOf :CollectionType ;
+                        rdfs:label "VariableCollectionType"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,1816 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.greco.ufrj.br/dcat_ufo_mlt#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.greco.ufrj.br/dcat_ufo_mlt#"
+     versionIRI="http://www.greco.ufrj.br/dcat_ufo_mlt#/1.0.0">
+    <Prefix name="" IRI="http://www.greco.ufrj.br/dcat_ufo_mlt#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="ex" IRI="http://www.greco.ufrj.br/example#"/>
+    <Prefix name="dct" IRI="http://purl.org/dc/terms#"/>
+    <Prefix name="mlt" IRI="http://www.nemo.inf.ufes.br/mlt#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="dcat" IRI="http://www.w3.org/ns/dcat#"/>
+    <Prefix name="gufo" IRI="http://purl.org/nemo/gufo#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="endml" IRI="http://www.greco.ufrj.br/endml#"/>
+    <Prefix name="marcr" IRI="http://id.loc.gov/vocabulary/relationship/#"/>
+    <Prefix name="marcrel" IRI="http://id.loc.gov/vocabulary/relators/#"/>
+    <Prefix name="dcat_ufo_mlt" IRI="http://www.greco.ufrj.br/dcat_ufo_mlt#"/>
+    <Import>http://www.greco.ufrj.br/endml#/1.0.0</Import>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:Category"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:FunctionalComplex"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:Individual"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:IntrinsicMode"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:Kind"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:QualityValue"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:Relator"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gufo:SubKind"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AttributionRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AttributionRoleValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Collection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DataResourceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DatasetOwnership"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DatasetType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DatasetTypeByDistribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DatasetTypeByDistributionsEquivalenceLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DatasetTypeByEquivalenceDistributions"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="FullyEquivalentDistributionsDataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="MultiDistributionDataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NonEquivalentDistributionsDataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="NotFullyEquivalentDistributionsDataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PowertypeClass"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="RelationRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="RelationRoleValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ResourceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SemiEquivalentDistributionsDataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SingleDistributionDataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SourceType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TargetDatasetType"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcat:Catalog"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcat:CatalogRecord"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcat:DataService"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcat:Distribution"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcat:Relationship"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcat:Resource"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcat:Role"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="dcat:qualifiedRelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="dct:relation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:hasAssociatedQualityValueType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:isComponentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:isProperPartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="datasetOwnership"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hadAttributionRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hadRelationRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="mediatesOwnershipSource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="mediatesOwnershipTarget"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI=":hasRelationRoleValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dcat:accessService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dcat:catalog"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dcat:dataset"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dcat:hadRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dcat:servesDataset"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dcat:service"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="marcr:basedon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="marcr:complementedby"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="marcr:replacedby"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="marcr:sequentialversion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="marcrel:own"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="AttributionRole"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Collection"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="DataResourceType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="DatasetOwnership"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="DatasetType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="DatasetTypeByDistribution"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="DatasetTypeByDistributionsEquivalenceLevel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="DatasetTypeByEquivalenceDistributions"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="FullyEquivalentDistributionsDataset"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="MultiDistributionDataset"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="NonEquivalentDistributionsDataset"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="NotFullyEquivalentDistributionsDataset"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="RelationRole"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="ResourceType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="SemiEquivalentDistributionsDataset"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="SingleDistributionDataset"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="SourceType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TargetDatasetType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="datasetOwnership"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:COVID19_Collection"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_CSV_2021"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_Dataset"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_ttl"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Collection"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Exam_2021"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Exam_2021_CSV"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Outcome_2021"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Outcome_2021_CSV"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Patient_2021"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Patient_2021_CSV"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Provenance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Provenance_ttl"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_WHO_COVID19_CRF"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_WHO_COVID19_CRF_ttl"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="dcat:Catalog"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="dcat:CatalogRecord"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="dcat:DataService"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="dcat:Dataset"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="dcat:Distribution"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="dcat:Relationship"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="dcat:Resource"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="dcat:Role"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dct:conformsTo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dct:format"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dct:license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dct:mediaType"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="gufo:isDerivedFrom"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="gufo:partitions"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcat:byteSize"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcat:distribution"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="PowertypeClass"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="gufo:Type"/>
+            <ObjectUnionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="endml:isPowertypeOf"/>
+                    <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="endml:isPowertypeOf"/>
+                    <Class abbreviatedIRI="endml:SecondOrderType"/>
+                </ObjectSomeValuesFrom>
+            </ObjectUnionOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="AttributionRole"/>
+        <Class abbreviatedIRI="dcat:Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AttributionRoleValue"/>
+        <Class abbreviatedIRI="gufo:QualityValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Collection"/>
+        <Class abbreviatedIRI="dcat:Catalog"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DataResourceType"/>
+        <Class IRI="ResourceType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DatasetOwnership"/>
+        <Class abbreviatedIRI="gufo:Relator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DatasetType"/>
+        <Class IRI="DataResourceType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DatasetTypeByDistribution"/>
+        <Class IRI="DatasetType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DatasetTypeByDistributionsEquivalenceLevel"/>
+        <Class IRI="DatasetType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DatasetTypeByDistributionsEquivalenceLevel"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="endml:isSubordinatedTo"/>
+            <Class IRI="DatasetTypeByEquivalenceDistributions"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DatasetTypeByEquivalenceDistributions"/>
+        <Class IRI="DatasetType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DatasetTypeByEquivalenceDistributions"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="endml:isSubordinatedTo"/>
+            <Class IRI="DatasetTypeByDistribution"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FullyEquivalentDistributionsDataset"/>
+        <Class IRI="MultiDistributionDataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FullyEquivalentDistributionsDataset"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            </ObjectInverseOf>
+            <Class abbreviatedIRI="dcat:Distribution"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="MultiDistributionDataset"/>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NonEquivalentDistributionsDataset"/>
+        <Class IRI="NotFullyEquivalentDistributionsDataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NotFullyEquivalentDistributionsDataset"/>
+        <Class IRI="MultiDistributionDataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="NotFullyEquivalentDistributionsDataset"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+            <Class abbreviatedIRI="dcat:Dataset"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RelationRole"/>
+        <Class abbreviatedIRI="dcat:Role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RelationRole"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="endml:characterizes"/>
+            <Class abbreviatedIRI="dcat:Relationship"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="RelationRoleValue"/>
+        <Class abbreviatedIRI="gufo:QualityValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ResourceType"/>
+        <Class abbreviatedIRI="endml:FunctionalComplexType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SemiEquivalentDistributionsDataset"/>
+        <Class IRI="NotFullyEquivalentDistributionsDataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SingleDistributionDataset"/>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SingleDistributionDataset"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            </ObjectInverseOf>
+            <Class abbreviatedIRI="dcat:Distribution"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SourceType"/>
+        <Class IRI="ResourceType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SourceType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="endml:mediation"/>
+            </ObjectInverseOf>
+            <Class abbreviatedIRI="dcat:Relationship"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TargetDatasetType"/>
+        <Class IRI="DatasetType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TargetDatasetType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="endml:mediation"/>
+            </ObjectInverseOf>
+            <Class abbreviatedIRI="dcat:Relationship"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:Catalog"/>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:Catalog"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+            <Class abbreviatedIRI="dcat:Resource"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:CatalogRecord"/>
+        <Class abbreviatedIRI="gufo:Relator"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:CatalogRecord"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+            <Class abbreviatedIRI="dcat:Catalog"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:CatalogRecord"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+            <Class abbreviatedIRI="dcat:Resource"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:DataService"/>
+        <Class abbreviatedIRI="dcat:Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+        <Class abbreviatedIRI="dcat:Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:Distribution"/>
+        <Class abbreviatedIRI="gufo:IntrinsicMode"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:Distribution"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="gufo:inheresIn"/>
+            <Class abbreviatedIRI="dcat:Dataset"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:Relationship"/>
+        <Class abbreviatedIRI="endml:RelatorType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:Relationship"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="endml:mediation"/>
+            <Class IRI="SourceType"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:Relationship"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="endml:mediation"/>
+            <Class IRI="TargetDatasetType"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:Relationship"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI="endml:characterizes"/>
+            </ObjectInverseOf>
+            <Class IRI="RelationRole"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:Resource"/>
+        <Class abbreviatedIRI="gufo:FunctionalComplex"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="dcat:Role"/>
+        <Class abbreviatedIRI="endml:QualityType"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="FullyEquivalentDistributionsDataset"/>
+        <Class IRI="NotFullyEquivalentDistributionsDataset"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="MultiDistributionDataset"/>
+        <Class IRI="SingleDistributionDataset"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="NonEquivalentDistributionsDataset"/>
+        <Class IRI="SemiEquivalentDistributionsDataset"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="dcat:DataService"/>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="RelationRoleValue"/>
+        <NamedIndividual abbreviatedIRI="marcr:basedon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="RelationRoleValue"/>
+        <NamedIndividual abbreviatedIRI="marcr:complementedby"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="RelationRoleValue"/>
+        <NamedIndividual abbreviatedIRI="marcr:replacedby"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="RelationRoleValue"/>
+        <NamedIndividual abbreviatedIRI="marcr:sequentialversion"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="RelationRoleValue"/>
+        <NamedIndividual abbreviatedIRI="marcrel:own"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderSubKind"/>
+        <NamedIndividual IRI="AttributionRole"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual IRI="AttributionRole"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetType"/>
+        <NamedIndividual IRI="Collection"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="SourceType"/>
+        <NamedIndividual IRI="Collection"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderKind"/>
+        <NamedIndividual IRI="DataResourceType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual IRI="DataResourceType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcat:Relationship"/>
+        <NamedIndividual IRI="DatasetOwnership"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderSubKind"/>
+        <NamedIndividual IRI="DatasetType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual IRI="DatasetType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderSubKind"/>
+        <NamedIndividual IRI="DatasetTypeByDistribution"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual IRI="DatasetTypeByDistribution"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderSubKind"/>
+        <NamedIndividual IRI="DatasetTypeByDistributionsEquivalenceLevel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual IRI="DatasetTypeByDistributionsEquivalenceLevel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderSubKind"/>
+        <NamedIndividual IRI="DatasetTypeByEquivalenceDistributions"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual IRI="DatasetTypeByEquivalenceDistributions"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+        <NamedIndividual IRI="FullyEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:SubKind"/>
+        <NamedIndividual IRI="FullyEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetType"/>
+        <NamedIndividual IRI="FullyEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetTypeByEquivalenceDistributions"/>
+        <NamedIndividual IRI="FullyEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ResourceType"/>
+        <NamedIndividual IRI="FullyEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+        <NamedIndividual IRI="MultiDistributionDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:SubKind"/>
+        <NamedIndividual IRI="MultiDistributionDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetType"/>
+        <NamedIndividual IRI="MultiDistributionDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetTypeByDistribution"/>
+        <NamedIndividual IRI="MultiDistributionDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ResourceType"/>
+        <NamedIndividual IRI="MultiDistributionDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+        <NamedIndividual IRI="NonEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:SubKind"/>
+        <NamedIndividual IRI="NonEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetType"/>
+        <NamedIndividual IRI="NonEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetTypeByDistributionsEquivalenceLevel"/>
+        <NamedIndividual IRI="NonEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ResourceType"/>
+        <NamedIndividual IRI="NonEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+        <NamedIndividual IRI="NotFullyEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:SubKind"/>
+        <NamedIndividual IRI="NotFullyEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetType"/>
+        <NamedIndividual IRI="NotFullyEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetTypeByEquivalenceDistributions"/>
+        <NamedIndividual IRI="NotFullyEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ResourceType"/>
+        <NamedIndividual IRI="NotFullyEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderSubKind"/>
+        <NamedIndividual IRI="RelationRole"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual IRI="RelationRole"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderCategory"/>
+        <NamedIndividual IRI="ResourceType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual IRI="ResourceType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+        <NamedIndividual IRI="SemiEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:SubKind"/>
+        <NamedIndividual IRI="SemiEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetType"/>
+        <NamedIndividual IRI="SemiEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetTypeByDistributionsEquivalenceLevel"/>
+        <NamedIndividual IRI="SemiEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ResourceType"/>
+        <NamedIndividual IRI="SemiEquivalentDistributionsDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+        <NamedIndividual IRI="SingleDistributionDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:SubKind"/>
+        <NamedIndividual IRI="SingleDistributionDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetType"/>
+        <NamedIndividual IRI="SingleDistributionDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetTypeByDistribution"/>
+        <NamedIndividual IRI="SingleDistributionDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ResourceType"/>
+        <NamedIndividual IRI="SingleDistributionDataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderRoleMixin"/>
+        <NamedIndividual IRI="SourceType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual IRI="SourceType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderRole"/>
+        <NamedIndividual IRI="TargetDatasetType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual IRI="TargetDatasetType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:MaterialRelationshipType"/>
+        <NamedIndividual IRI="datasetOwnership"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:COVID19_Collection"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Collection"/>
+        <NamedIndividual abbreviatedIRI="ex:COVID19_Collection"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_CSV_2021"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="NonEquivalentDistributionsDataset"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_CSV_2021"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_Dataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="NonEquivalentDistributionsDataset"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_Dataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_ttl"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="NonEquivalentDistributionsDataset"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_ttl"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Collection"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Collection"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Collection"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Exam_2021"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="SingleDistributionDataset"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Exam_2021"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Exam_2021_CSV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcat:Distribution"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Exam_2021_CSV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Outcome_2021"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="SingleDistributionDataset"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Outcome_2021"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Outcome_2021_CSV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcat:Distribution"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Outcome_2021_CSV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Patient_2021"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="SingleDistributionDataset"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Patient_2021"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Patient_2021_CSV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcat:Distribution"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Patient_2021_CSV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Provenance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="SingleDistributionDataset"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Provenance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Provenance_ttl"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcat:Distribution"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Provenance_ttl"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_WHO_COVID19_CRF"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="SingleDistributionDataset"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_WHO_COVID19_CRF"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Individual"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_WHO_COVID19_CRF_ttl"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcat:Distribution"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_WHO_COVID19_CRF_ttl"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Catalog"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:SubKind"/>
+        <NamedIndividual abbreviatedIRI="dcat:Catalog"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Catalog"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ResourceType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Catalog"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+        <NamedIndividual abbreviatedIRI="dcat:CatalogRecord"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Kind"/>
+        <NamedIndividual abbreviatedIRI="dcat:CatalogRecord"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:RelatorType"/>
+        <NamedIndividual abbreviatedIRI="dcat:CatalogRecord"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+        <NamedIndividual abbreviatedIRI="dcat:DataService"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Kind"/>
+        <NamedIndividual abbreviatedIRI="dcat:DataService"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DataResourceType"/>
+        <NamedIndividual abbreviatedIRI="dcat:DataService"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ResourceType"/>
+        <NamedIndividual abbreviatedIRI="dcat:DataService"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Dataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Kind"/>
+        <NamedIndividual abbreviatedIRI="dcat:Dataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DataResourceType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Dataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="DatasetType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Dataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ResourceType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Dataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="TargetDatasetType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Dataset"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:ConcreteIndividualType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Distribution"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Kind"/>
+        <NamedIndividual abbreviatedIRI="dcat:Distribution"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:IntrinsicModeType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Distribution"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderKind"/>
+        <NamedIndividual abbreviatedIRI="dcat:Relationship"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Relationship"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="gufo:Category"/>
+        <NamedIndividual abbreviatedIRI="dcat:Resource"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="ResourceType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Resource"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:HighOrderKind"/>
+        <NamedIndividual abbreviatedIRI="dcat:Role"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="endml:SecondOrderType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Role"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="hadRelationRole"/>
+        <NamedIndividual IRI="DatasetOwnership"/>
+        <NamedIndividual abbreviatedIRI="marcrel:own"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="endml:isPowertypeOf"/>
+        <NamedIndividual IRI="DatasetType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Dataset"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="endml:isPowertypeOf"/>
+        <NamedIndividual IRI="ResourceType"/>
+        <NamedIndividual abbreviatedIRI="dcat:Resource"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="datasetOwnership"/>
+        <NamedIndividual abbreviatedIRI="ex:COVID19_Collection"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_CSV_2021"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="datasetOwnership"/>
+        <NamedIndividual abbreviatedIRI="ex:COVID19_Collection"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_Dataset"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="dcat:dataset"/>
+        <NamedIndividual abbreviatedIRI="ex:COVID19_Collection"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_CSV_2021"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="dcat:dataset"/>
+        <NamedIndividual abbreviatedIRI="ex:COVID19_Collection"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_Dataset"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_CSV_2021"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Exam_2021"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_CSV_2021"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Outcome_2021"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_CSV_2021"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Patient_2021"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_Dataset"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_CSV_2021"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_Dataset"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_ttl"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_ttl"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Provenance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_ttl"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_WHO_COVID19_CRF"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="dcat:dataset"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_Collection"/>
+        <NamedIndividual abbreviatedIRI="ex:Hosp1_COVID19_CSV_2021"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="dcat:qualifiedRelation"/>
+        <ObjectProperty abbreviatedIRI="endml:mediation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="dct:relation"/>
+        <ObjectProperty abbreviatedIRI="endml:mediation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+        <ObjectProperty abbreviatedIRI="gufo:isComponentOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="datasetOwnership"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="hadAttributionRole"/>
+        <ObjectProperty abbreviatedIRI="dcat:hadRole"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="hadRelationRole"/>
+        <ObjectProperty abbreviatedIRI="dcat:hadRole"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="mediatesOwnershipSource"/>
+        <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="mediatesOwnershipTarget"/>
+        <ObjectProperty abbreviatedIRI="gufo:mediates"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI=":hasRelationRoleValue"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="dcat:catalog"/>
+        <ObjectProperty abbreviatedIRI="gufo:isComponentOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="dcat:dataset"/>
+        <ObjectProperty abbreviatedIRI="gufo:isComponentOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="dcat:hadRole"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="gufo:isProperPartOf"/>
+        <ObjectProperty abbreviatedIRI="dcat:dataset"/>
+    </InverseObjectProperties>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="endml:mediation"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty abbreviatedIRI="endml:mediation"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="dcat:qualifiedRelation"/>
+        <Class abbreviatedIRI="dcat:Relationship"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="dct:relation"/>
+        <Class abbreviatedIRI="dcat:Relationship"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+        <Class abbreviatedIRI="dcat:Resource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="datasetOwnership"/>
+        <Class IRI="Collection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="mediatesOwnershipSource"/>
+        <Class IRI="DatasetOwnership"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="mediatesOwnershipTarget"/>
+        <Class IRI="DatasetOwnership"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI=":hasRelationRoleValue"/>
+        <Class IRI="RelationRole"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="dcat:accessService"/>
+        <Class abbreviatedIRI="dcat:Distribution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="dcat:catalog"/>
+        <Class abbreviatedIRI="dcat:Catalog"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="dcat:dataset"/>
+        <Class abbreviatedIRI="dcat:Catalog"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="dcat:hadRole"/>
+        <Class abbreviatedIRI="gufo:Relator"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="dcat:servesDataset"/>
+        <Class abbreviatedIRI="dcat:DataService"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="dcat:service"/>
+        <Class abbreviatedIRI="dcat:Catalog"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="dcat:qualifiedRelation"/>
+        <Class IRI="TargetDatasetType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="dct:relation"/>
+        <Class IRI="SourceType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="dct:hasPart"/>
+        <Class abbreviatedIRI="dcat:Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="datasetOwnership"/>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hadAttributionRole"/>
+        <Class IRI="AttributionRoleValue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hadRelationRole"/>
+        <Class IRI="RelationRoleValue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="mediatesOwnershipSource"/>
+        <Class abbreviatedIRI="dcat:Catalog"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="mediatesOwnershipTarget"/>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI=":hasRelationRoleValue"/>
+        <Class IRI="RelationRoleValue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="dcat:accessService"/>
+        <Class abbreviatedIRI="dcat:DataService"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="dcat:catalog"/>
+        <Class abbreviatedIRI="dcat:Catalog"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="dcat:dataset"/>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="dcat:hadRole"/>
+        <ObjectUnionOf>
+            <Class IRI="AttributionRoleValue"/>
+            <Class IRI="RelationRoleValue"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="dcat:servesDataset"/>
+        <Class abbreviatedIRI="dcat:Dataset"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="dcat:service"/>
+        <Class abbreviatedIRI="dcat:DataService"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>marcr:basedon</AbbreviatedIRI>
+        <Literal xml:lang="en">Based On</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>marcr:complementedby</AbbreviatedIRI>
+        <Literal xml:lang="en">Complemented By</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>marcr:replacedby</AbbreviatedIRI>
+        <Literal xml:lang="en">Replaced By</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>marcr:sequentialversion</AbbreviatedIRI>
+        <Literal xml:lang="en">Sequential Version</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>marcrel:own</AbbreviatedIRI>
+        <Literal xml:lang="en">Owner</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dct:hasPart</AbbreviatedIRI>
+        <Literal xml:lang="en">dct:hasPart</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AttributionRole</IRI>
+        <Literal xml:lang="en">AttributionRole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>AttributionRoleValue</IRI>
+        <Literal xml:lang="en">AttributionRoleValue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="gufo:partitions"/>
+        <IRI>DataResourceType</IRI>
+        <AbbreviatedIRI>dcat:Resource</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DataResourceType</IRI>
+        <Literal xml:lang="en">DataResourceType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DatasetOwnership</IRI>
+        <Literal xml:lang="en">Dataset Ownership</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DatasetType</IRI>
+        <Literal xml:lang="en">DatasetType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="gufo:partitions"/>
+        <IRI>DatasetTypeByDistribution</IRI>
+        <AbbreviatedIRI>dcat:Dataset</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DatasetTypeByDistribution</IRI>
+        <Literal xml:lang="en">DatasetTypeByDistribution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="gufo:partitions"/>
+        <IRI>DatasetTypeByDistributionsEquivalenceLevel</IRI>
+        <IRI>NotFullyEquivalentDistributionsDataset</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DatasetTypeByDistributionsEquivalenceLevel</IRI>
+        <Literal xml:lang="en">DatasetTypeByDistributionsEquivalenceLevel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="gufo:partitions"/>
+        <IRI>DatasetTypeByEquivalenceDistributions</IRI>
+        <IRI>MultiDistributionDataset</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DatasetTypeByEquivalenceDistributions</IRI>
+        <Literal xml:lang="en">DatasetTypeByEquivalenceDistributions</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>FullyEquivalentDistributionsDataset</IRI>
+        <Literal xml:lang="en">FullyEquivalentDistributionsDataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>MultiDistributionDataset</IRI>
+        <Literal xml:lang="en">MultiDistributionDataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NonEquivalentDistributionsDataset</IRI>
+        <Literal xml:lang="en">NonEquivalentDistributionsDataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>NotFullyEquivalentDistributionsDataset</IRI>
+        <Literal xml:lang="en">NotFullyEquivalentDistributionsDataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>PowertypeClass</IRI>
+        <Literal xml:lang="en">PowertypeClass</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RelationRole</IRI>
+        <Literal xml:lang="en">RelationRole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>RelationRoleValue</IRI>
+        <Literal xml:lang="en">RelationRoleValue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>ResourceType</IRI>
+        <Literal xml:lang="en">ResourceType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>SemiEquivalentDistributionsDataset</IRI>
+        <Literal xml:lang="en">SemiEquivalentDistributionsDataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>SingleDistributionDataset</IRI>
+        <Literal xml:lang="en">SingleDistributionDataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>SourceType</IRI>
+        <Literal xml:lang="en">SourceType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>TargetDatasetType</IRI>
+        <Literal xml:lang="en">TargetDatasetType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="gufo:isDerivedFrom"/>
+        <IRI>datasetOwnership</IRI>
+        <IRI>DatasetOwnership</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hadAttributionRole</IRI>
+        <Literal xml:lang="en">:hadAttributionRole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>hadRelationRole</IRI>
+        <Literal xml:lang="en">:hadRelationRole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <AbbreviatedIRI>ex:COVID19_Collection</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Collection COVID-19</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ex:COVID19_Collection</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Collection COVID-19</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <AbbreviatedIRI>ex:Hosp1_COVID19_CSV_2021</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Hospital1 COVID-19 CSV Dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:license"/>
+        <AbbreviatedIRI>ex:Hosp1_COVID19_CSV_2021</AbbreviatedIRI>
+        <IRI>https://creativecommons.org/licenses/by-nc/3.0/br/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ex:Hosp1_COVID19_CSV_2021</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Hospital1_COVID19 CSV Dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <AbbreviatedIRI>ex:Hosp1_COVID19_Dataset</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Hospital1 COVID-19 Dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:license"/>
+        <AbbreviatedIRI>ex:Hosp1_COVID19_Dataset</AbbreviatedIRI>
+        <IRI>https://creativecommons.org/licenses/by-nc/3.0/br/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ex:Hosp1_COVID19_Dataset</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Hospital1_COVID19 Dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <AbbreviatedIRI>ex:Hosp1_COVID19_ttl</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Hospital1 COVID-19 ttl Dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:license"/>
+        <AbbreviatedIRI>ex:Hosp1_COVID19_ttl</AbbreviatedIRI>
+        <IRI>https://creativecommons.org/licenses/by-nc/3.0/br/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ex:Hosp1_COVID19_ttl</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Hospital1_COVID19 ttl Dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <AbbreviatedIRI>ex:Hosp1_Collection</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Collection COVID-19</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>ex:Hosp1_Collection</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/2000/01/rdf-schema#Literal">Collection COVID-19</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:distribution"/>
+        <AbbreviatedIRI>ex:Hosp1_Exam_2021</AbbreviatedIRI>
+        <AbbreviatedIRI>ex:Hosp1_Exam_2021_CSV</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_Exam_2021</AbbreviatedIRI>
+        <IRI>http://purl.bioontology.org/ontology/MESH/D012699</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_Exam_2021</AbbreviatedIRI>
+        <IRI>http://purl.obolibrary.org/obo/LABO_0000109</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_Exam_2021</AbbreviatedIRI>
+        <IRI>http://purl.obolibrary.org/obo/OBI_0000406</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:format"/>
+        <AbbreviatedIRI>ex:Hosp1_Exam_2021_CSV</AbbreviatedIRI>
+        <IRI>http://publications.europa.eu/resource/authority/file-type/CSV</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:mediaType"/>
+        <AbbreviatedIRI>ex:Hosp1_Exam_2021_CSV</AbbreviatedIRI>
+        <IRI>http://www.iana.org/assignments/media-types/text/csv</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:byteSize"/>
+        <AbbreviatedIRI>ex:Hosp1_Exam_2021_CSV</AbbreviatedIRI>
+        <Literal xml:lang="en">441,23MB</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:distribution"/>
+        <AbbreviatedIRI>ex:Hosp1_Outcome_2021</AbbreviatedIRI>
+        <AbbreviatedIRI>ex:Hosp1_Outcome_2021_CSV</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_Outcome_2021</AbbreviatedIRI>
+        <IRI>http://purl.obolibrary.org/obo/NCIT_C25166</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:format"/>
+        <AbbreviatedIRI>ex:Hosp1_Outcome_2021_CSV</AbbreviatedIRI>
+        <IRI>http://publications.europa.eu/resource/authority/file-type/CSV</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:mediaType"/>
+        <AbbreviatedIRI>ex:Hosp1_Outcome_2021_CSV</AbbreviatedIRI>
+        <IRI>http://www.iana.org/assignments/media-types/text/csv</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:byteSize"/>
+        <AbbreviatedIRI>ex:Hosp1_Outcome_2021_CSV</AbbreviatedIRI>
+        <Literal xml:lang="en">12,652MB</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:distribution"/>
+        <AbbreviatedIRI>ex:Hosp1_Patient_2021</AbbreviatedIRI>
+        <AbbreviatedIRI>ex:Hosp1_Patient_2021_CSV</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_Patient_2021</AbbreviatedIRI>
+        <IRI>http://purl.obolibrary.org/obo/NCIT_C124436</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_Patient_2021</AbbreviatedIRI>
+        <IRI>http://purl.obolibrary.org/obo/NCIT_C16960</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_Patient_2021</AbbreviatedIRI>
+        <IRI>http://purl.obolibrary.org/obo/NCIT_C25150</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_Patient_2021</AbbreviatedIRI>
+        <IRI>http://purl.obolibrary.org/obo/NCIT_C68615</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:format"/>
+        <AbbreviatedIRI>ex:Hosp1_Patient_2021_CSV</AbbreviatedIRI>
+        <IRI>http://publications.europa.eu/resource/authority/file-type/CSV</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:mediaType"/>
+        <AbbreviatedIRI>ex:Hosp1_Patient_2021_CSV</AbbreviatedIRI>
+        <IRI>http://www.iana.org/assignments/media-types/text/csv</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:byteSize"/>
+        <AbbreviatedIRI>ex:Hosp1_Patient_2021_CSV</AbbreviatedIRI>
+        <Literal xml:lang="en">0,87MB</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:conformsTo"/>
+        <AbbreviatedIRI>ex:Hosp1_Provenance</AbbreviatedIRI>
+        <IRI>http://www.w3.org/ns/prov</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:distribution"/>
+        <AbbreviatedIRI>ex:Hosp1_Provenance</AbbreviatedIRI>
+        <AbbreviatedIRI>ex:Hosp1_Provenance_ttl</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:format"/>
+        <AbbreviatedIRI>ex:Hosp1_Provenance_ttl</AbbreviatedIRI>
+        <IRI>http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:mediaType"/>
+        <AbbreviatedIRI>ex:Hosp1_Provenance_ttl</AbbreviatedIRI>
+        <IRI>https://www.iana.org/assignments/media-types/text/turtle</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:byteSize"/>
+        <AbbreviatedIRI>ex:Hosp1_Provenance_ttl</AbbreviatedIRI>
+        <Literal xml:lang="en">440MB</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:conformsTo"/>
+        <AbbreviatedIRI>ex:Hosp1_WHO_COVID19_CRF</AbbreviatedIRI>
+        <IRI>https://bioportal.bioontology.org/ontologies/COVIDCRFRAPID</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:distribution"/>
+        <AbbreviatedIRI>ex:Hosp1_WHO_COVID19_CRF</AbbreviatedIRI>
+        <AbbreviatedIRI>ex:Hosp1_WHO_COVID19_CRF_ttl</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_WHO_COVID19_CRF</AbbreviatedIRI>
+        <IRI>http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25190</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_WHO_COVID19_CRF</AbbreviatedIRI>
+        <IRI>http://purl.bioontology.org/ontology/SNOMEDCT/125676002</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_WHO_COVID19_CRF</AbbreviatedIRI>
+        <IRI>http://purl.org/net/OCRe/OCRe.owl#OCRE400076</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_WHO_COVID19_CRF</AbbreviatedIRI>
+        <IRI>http://purl.org/vodan/whocovid19crfsemdatamodel/who-covid-19-rapid-crf</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:theme"/>
+        <AbbreviatedIRI>ex:Hosp1_WHO_COVID19_CRF</AbbreviatedIRI>
+        <IRI>http://xmlns.com/foaf/0.1/Person</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:format"/>
+        <AbbreviatedIRI>ex:Hosp1_WHO_COVID19_CRF_ttl</AbbreviatedIRI>
+        <IRI>http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dct:mediaType"/>
+        <AbbreviatedIRI>ex:Hosp1_WHO_COVID19_CRF_ttl</AbbreviatedIRI>
+        <IRI>https://www.iana.org/assignments/media-types/text/turtle</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcat:byteSize"/>
+        <AbbreviatedIRI>ex:Hosp1_WHO_COVID19_CRF_ttl</AbbreviatedIRI>
+        <Literal xml:lang="en">850MB</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:Catalog</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:Catalog</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:CatalogRecord</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:CatalogRecord</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:DataService</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:DataService</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:Dataset</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:Dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:Distribution</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:Distribution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:Relationship</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:Relationship</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:Resource</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:Resource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:Role</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:Role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:accessService</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:accessService</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:catalog</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:catalog</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:dataset</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:dataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:hadRole</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:hadRole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:servesDataset</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:servesDataset</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dcat:service</AbbreviatedIRI>
+        <Literal xml:lang="en">dcat:service</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

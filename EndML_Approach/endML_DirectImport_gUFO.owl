@@ -1,0 +1,632 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.greco.ufrj.br/endml"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.greco.ufrj.br/endml"
+     versionIRI="http://www.greco.ufrj.br/endml#/1.0.0">
+    <Prefix name="" IRI="http://www.greco.ufrj.br/endml#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="gufo" IRI="http://purl.org/nemo/gufo"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>https://purl.org/nemo/gufo#/1.0.0</Import>
+    <Declaration>
+        <Class IRI="#AspectType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CollectionType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExtrinsicAspectType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExtrinsicModeType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FirstOrderType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FixedCollectionType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FunctionalComplexType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderAntiRigidType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderCategory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderKind"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderMixin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderNonRigidType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderNonSortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderPhase"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderPhaseMixin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderRigidType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderRoleMixin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderSemiRigidType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderSortal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderSubKind"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighOrderType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IntrinsicAspectType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IntrinsicModeType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObjectType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QualityType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QuantityType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RelatorType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecondOrderType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ThirdOrderType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VariableCollectionType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#characterizes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPowertypeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSubordinatedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#mediation"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
+        <Class IRI="#FirstOrderType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AspectType"/>
+        <Class IRI="http://purl.org/nemo/gufo#EndurantType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CollectionType"/>
+        <Class IRI="#ObjectType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExtrinsicAspectType"/>
+        <Class IRI="#AspectType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExtrinsicModeType"/>
+        <Class IRI="#ExtrinsicAspectType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExtrinsicModeType"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#characterizes"/>
+            <Class IRI="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FirstOrderType"/>
+        <Class IRI="http://purl.org/nemo/gufo#Type"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FixedCollectionType"/>
+        <Class IRI="#CollectionType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FunctionalComplexType"/>
+        <Class IRI="#ObjectType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderAntiRigidType"/>
+        <Class IRI="#HighOrderNonRigidType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderCategory"/>
+        <Class IRI="#HighOrderNonSortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderCategory"/>
+        <Class IRI="#HighOrderRigidType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderKind"/>
+        <Class IRI="#HighOrderRigidType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderKind"/>
+        <Class IRI="#HighOrderSortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderMixin"/>
+        <Class IRI="#HighOrderNonSortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderMixin"/>
+        <Class IRI="#HighOrderSemiRigidType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderNonRigidType"/>
+        <Class IRI="#HighOrderType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderNonSortal"/>
+        <Class IRI="#HighOrderType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderPhase"/>
+        <Class IRI="#HighOrderAntiRigidType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderPhase"/>
+        <Class IRI="#HighOrderSortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderPhaseMixin"/>
+        <Class IRI="#HighOrderAntiRigidType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderPhaseMixin"/>
+        <Class IRI="#HighOrderNonSortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderRigidType"/>
+        <Class IRI="#HighOrderType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderRole"/>
+        <Class IRI="#HighOrderAntiRigidType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderRole"/>
+        <Class IRI="#HighOrderSortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderRoleMixin"/>
+        <Class IRI="#HighOrderAntiRigidType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderRoleMixin"/>
+        <Class IRI="#HighOrderNonSortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderSemiRigidType"/>
+        <Class IRI="#HighOrderNonRigidType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderSortal"/>
+        <Class IRI="#HighOrderType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderSubKind"/>
+        <Class IRI="#HighOrderRigidType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderSubKind"/>
+        <Class IRI="#HighOrderSortal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighOrderType"/>
+        <Class IRI="http://purl.org/nemo/gufo#Type"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IntrinsicAspectType"/>
+        <Class IRI="#AspectType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IntrinsicAspectType"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#characterizes"/>
+            <Class IRI="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IntrinsicModeType"/>
+        <Class IRI="#IntrinsicAspectType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObjectType"/>
+        <Class IRI="http://purl.org/nemo/gufo#EndurantType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QualityType"/>
+        <Class IRI="#IntrinsicAspectType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QuantityType"/>
+        <Class IRI="#ObjectType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RelatorType"/>
+        <Class IRI="#ExtrinsicAspectType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RelatorType"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#mediation"/>
+            <Class IRI="http://purl.org/nemo/gufo#EndurantType"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecondOrderType"/>
+        <Class IRI="#HighOrderType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ThirdOrderType"/>
+        <Class IRI="#HighOrderType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VariableCollectionType"/>
+        <Class IRI="#CollectionType"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AspectType"/>
+        <Class IRI="#ObjectType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ExtrinsicAspectType"/>
+        <Class IRI="#IntrinsicAspectType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ExtrinsicModeType"/>
+        <Class IRI="#RelatorType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FirstOrderType"/>
+        <Class IRI="#HighOrderType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FixedCollectionType"/>
+        <Class IRI="#VariableCollectionType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HighOrderAntiRigidType"/>
+        <Class IRI="#HighOrderSemiRigidType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HighOrderKind"/>
+        <Class IRI="#HighOrderSubKind"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HighOrderNonRigidType"/>
+        <Class IRI="#HighOrderRigidType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HighOrderNonSortal"/>
+        <Class IRI="#HighOrderSortal"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HighOrderPhase"/>
+        <Class IRI="#HighOrderRole"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HighOrderPhaseMixin"/>
+        <Class IRI="#HighOrderRoleMixin"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IntrinsicModeType"/>
+        <Class IRI="#QualityType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#SecondOrderType"/>
+        <Class IRI="#ThirdOrderType"/>
+    </DisjointClasses>
+    <DisjointUnion>
+        <Class IRI="http://purl.org/nemo/gufo#Type"/>
+        <Class IRI="#FirstOrderType"/>
+        <Class IRI="#HighOrderType"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#AspectType"/>
+        <Class IRI="#ExtrinsicAspectType"/>
+        <Class IRI="#IntrinsicAspectType"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#CollectionType"/>
+        <Class IRI="#FixedCollectionType"/>
+        <Class IRI="#VariableCollectionType"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#ExtrinsicAspectType"/>
+        <Class IRI="#ExtrinsicModeType"/>
+        <Class IRI="#RelatorType"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#HighOrderNonRigidType"/>
+        <Class IRI="#HighOrderAntiRigidType"/>
+        <Class IRI="#HighOrderSemiRigidType"/>
+    </DisjointUnion>
+    <DisjointUnion>
+        <Class IRI="#IntrinsicAspectType"/>
+        <Class IRI="#IntrinsicModeType"/>
+        <Class IRI="#QualityType"/>
+    </DisjointUnion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#characterizes"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#characterizes"/>
+        <Class IRI="#AspectType"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPowertypeOf"/>
+        <Class IRI="#HighOrderType"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSubordinatedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSubordinatedTo"/>
+            <Class IRI="#FirstOrderType"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSubordinatedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSubordinatedTo"/>
+            <Class IRI="#SecondOrderType"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSubordinatedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSubordinatedTo"/>
+            <Class IRI="#ThirdOrderType"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#mediation"/>
+        <Class IRI="#RelatorType"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#characterizes"/>
+        <Class IRI="http://purl.org/nemo/gufo#Type"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#mediation"/>
+        <Class IRI="http://purl.org/nemo/gufo#EndurantType"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AspectType</IRI>
+        <Literal xml:lang="en">AspectType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CollectionType</IRI>
+        <Literal xml:lang="en">CollectionType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ExtrinsicAspectType</IRI>
+        <Literal xml:lang="en">ExtrinsicAspectType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ExtrinsicModeType</IRI>
+        <Literal xml:lang="en">ExtrinsicModeType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#ExtrinsicModeType</IRI>
+        <IRI>http://purl.org/nemo/gufo#externallyDependsOn</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#ExtrinsicModeType</IRI>
+        <IRI>#characterizes</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FixedCollectionType</IRI>
+        <Literal xml:lang="en">FixedCollectionType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#FixedCollectionType</IRI>
+        <IRI>http://purl.org/nemo/gufo#isCollectionMemberOf</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#FixedCollectionType</IRI>
+        <IRI>http://purl.org/nemo/gufo#isSubCollectionOf</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#FunctionalComplexType</IRI>
+        <Literal xml:lang="en">FunctionalComplexType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#FunctionalComplexType</IRI>
+        <IRI>http://purl.org/nemo/gufo#TemporaryParthoodSituation</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderAntiRigidType</IRI>
+        <Literal xml:lang="en">HighOrderAntiRigidType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderCategory</IRI>
+        <Literal xml:lang="en">HighOrderCategory</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderKind</IRI>
+        <Literal xml:lang="en">HighOrderKind</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderMixin</IRI>
+        <Literal xml:lang="en">HighOrderMixin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderNonRigidType</IRI>
+        <Literal xml:lang="en">HighOrderNonRigidType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderNonSortal</IRI>
+        <Literal xml:lang="en">HighOrderNonSortal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderPhase</IRI>
+        <Literal xml:lang="en">HighOrderPhase</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderPhaseMixin</IRI>
+        <Literal xml:lang="en">HighOrderPhaseMixin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderRigidType</IRI>
+        <Literal xml:lang="en">HighOrderRigidType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderRole</IRI>
+        <Literal xml:lang="en">HighOrderRole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderRoleMixin</IRI>
+        <Literal xml:lang="en">HighOrderRoleMixin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderSemiRigidType</IRI>
+        <Literal xml:lang="en">HighOrderSemiRigidType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderSortal</IRI>
+        <Literal xml:lang="en">HighOrderSortal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HighOrderSubKind</IRI>
+        <Literal xml:lang="en">HighOrderSubKind</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#IntrinsicAspectType</IRI>
+        <Literal xml:lang="en">IntrinsicAspectType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#IntrinsicAspectType</IRI>
+        <IRI>#characterizes</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#IntrinsicModeType</IRI>
+        <Literal xml:lang="en">IntrinsicModeType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ObjectType</IRI>
+        <Literal xml:lang="en">ObjectType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#QualityType</IRI>
+        <Literal xml:lang="en">QualityType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#QuantityType</IRI>
+        <Literal xml:lang="en">QuantityType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#QuantityType</IRI>
+        <IRI>http://purl.org/nemo/gufo#isSubQuantityOf</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#RelatorType</IRI>
+        <Literal xml:lang="en">RelatorType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#RelatorType</IRI>
+        <IRI>http://purl.org/nemo/gufo#mediates</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#VariableCollectionType</IRI>
+        <Literal xml:lang="en">VariableCollectionType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPowertypeOf</IRI>
+        <Literal>The principle of application of t1 defines that its instances applies to instances of t2 but does not define a classification criteria. Thus, the extension of t1 is composed by all specializations of t2, including t2 itself.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPowertypeOf</IRI>
+        <Literal xml:lang="en">isPowertypeOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isSubordinatedTo</IRI>
+        <Literal>The principle of application of each instance of t1 adds some classification criteria to the principle of application of some instance of t2 i.e. every instance of t1 proper specializes some instance of t2.
+Domain and Range: Higher-order types of the same order (instances of 2ndOT or 3rdOT).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isSubordinatedTo</IRI>
+        <Literal xml:lang="en">isSubordinatedTo</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,946 @@
+@prefix : <http://www.greco.ufrj.br/dcat_ufo_mlt#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex: <http://www.greco.ufrj.br/example#> .
+@prefix dct: <http://purl.org/dc/terms#> .
+@prefix mlt: <http://www.nemo.inf.ufes.br/mlt#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix endml: <http://www.greco.ufrj.br/endml#> .
+@prefix marcr: <http://id.loc.gov/vocabulary/relationship/#> .
+@prefix marcrel: <http://id.loc.gov/vocabulary/relators/#> .
+@prefix dcat_ufo_mlt: <http://www.greco.ufrj.br/dcat_ufo_mlt#> .
+@base <http://www.greco.ufrj.br/dcat_ufo_mlt#> .
+
+<http://www.greco.ufrj.br/dcat_ufo_mlt#> rdf:type owl:Ontology ;
+                                          owl:versionIRI <http://www.greco.ufrj.br/dcat_ufo_mlt#/1.0.0> ;
+                                          owl:imports <http://www.greco.ufrj.br/endml#/1.0.0> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms#conformsTo
+dct:conformsTo rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms#format
+dct:format rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms#license
+dct:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms#mediaType
+dct:mediaType rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/nemo/gufo#isDerivedFrom
+gufo:isDerivedFrom rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/nemo/gufo#partitions
+gufo:partitions rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#byteSize
+dcat:byteSize rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#distribution
+dcat:distribution rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#theme
+dcat:theme rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  dcat:qualifiedRelation
+<dcat:qualifiedRelation> rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf endml:mediation ;
+                         rdfs:domain dcat:Relationship ;
+                         rdfs:range dcat_ufo_mlt:TargetDatasetType .
+
+
+###  dct:relation
+<dct:relation> rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf endml:mediation ;
+               rdfs:domain dcat:Relationship ;
+               rdfs:range dcat_ufo_mlt:SourceType .
+
+
+###  http://purl.org/dc/terms#hasPart
+dct:hasPart rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf gufo:isComponentOf ;
+            rdfs:domain dcat:Resource ;
+            rdfs:range dcat:Resource ;
+            rdfs:label "dct:hasPart"@en .
+
+
+###  http://purl.org/nemo/gufo#hasAssociatedQualityValueType
+gufo:hasAssociatedQualityValueType rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/nemo/gufo#inheresIn
+gufo:inheresIn rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/nemo/gufo#isComponentOf
+gufo:isComponentOf rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/nemo/gufo#isProperPartOf
+gufo:isProperPartOf rdf:type owl:ObjectProperty ;
+                    owl:inverseOf dcat:dataset .
+
+
+###  http://purl.org/nemo/gufo#mediates
+gufo:mediates rdf:type owl:ObjectProperty .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#datasetOwnership
+dcat_ufo_mlt:datasetOwnership rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              rdfs:domain dcat_ufo_mlt:Collection ;
+                              rdfs:range dcat:Dataset .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#hadAttributionRole
+dcat_ufo_mlt:hadAttributionRole rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf dcat:hadRole ;
+                                rdfs:range dcat_ufo_mlt:AttributionRoleValue ;
+                                rdfs:label ":hadAttributionRole"@en .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#hadRelationRole
+dcat_ufo_mlt:hadRelationRole rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf dcat:hadRole ;
+                             rdfs:range dcat_ufo_mlt:RelationRoleValue ;
+                             rdfs:label ":hadRelationRole"@en .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#mediatesOwnershipSource
+dcat_ufo_mlt:mediatesOwnershipSource rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf gufo:mediates ;
+                                     rdfs:domain dcat_ufo_mlt:DatasetOwnership ;
+                                     rdfs:range dcat:Catalog .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#mediatesOwnershipTarget
+dcat_ufo_mlt:mediatesOwnershipTarget rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf gufo:mediates ;
+                                     rdfs:domain dcat_ufo_mlt:DatasetOwnership ;
+                                     rdfs:range dcat:Dataset .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#:hasRelationRoleValue
+<http://www.greco.ufrj.br/dcat_ufo_mlt#:hasRelationRoleValue> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                                              rdfs:domain dcat_ufo_mlt:RelationRole ;
+                                                              rdfs:range dcat_ufo_mlt:RelationRoleValue .
+
+
+###  http://www.greco.ufrj.br/endml#mediation
+endml:mediation rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty .
+
+
+###  http://www.w3.org/ns/dcat#accessService
+dcat:accessService rdf:type owl:ObjectProperty ;
+                   rdfs:domain dcat:Distribution ;
+                   rdfs:range dcat:DataService ;
+                   rdfs:label "dcat:accessService"@en .
+
+
+###  http://www.w3.org/ns/dcat#catalog
+dcat:catalog rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf gufo:isComponentOf ;
+             rdfs:domain dcat:Catalog ;
+             rdfs:range dcat:Catalog ;
+             rdfs:label "dcat:catalog"@en .
+
+
+###  http://www.w3.org/ns/dcat#dataset
+dcat:dataset rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf gufo:isComponentOf ;
+             rdfs:domain dcat:Catalog ;
+             rdfs:range dcat:Dataset ;
+             rdfs:label "dcat:dataset"@en .
+
+
+###  http://www.w3.org/ns/dcat#hadRole
+dcat:hadRole rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain gufo:Relator ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( dcat_ufo_mlt:AttributionRoleValue
+                                        dcat_ufo_mlt:RelationRoleValue
+                                      )
+                        ] ;
+             rdfs:label "dcat:hadRole"@en .
+
+
+###  http://www.w3.org/ns/dcat#servesDataset
+dcat:servesDataset rdf:type owl:ObjectProperty ;
+                   rdfs:domain dcat:DataService ;
+                   rdfs:range dcat:Dataset ;
+                   rdfs:label "dcat:servesDataset"@en .
+
+
+###  http://www.w3.org/ns/dcat#service
+dcat:service rdf:type owl:ObjectProperty ;
+             rdfs:domain dcat:Catalog ;
+             rdfs:range dcat:DataService ;
+             rdfs:label "dcat:service"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/nemo/gufo#Category
+gufo:Category rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#FunctionalComplex
+gufo:FunctionalComplex rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Individual
+gufo:Individual rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#IntrinsicMode
+gufo:IntrinsicMode rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Kind
+gufo:Kind rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#QualityValue
+gufo:QualityValue rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Relator
+gufo:Relator rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#SubKind
+gufo:SubKind rdf:type owl:Class .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#AttributionRole
+dcat_ufo_mlt:AttributionRole rdf:type owl:Class ;
+                             rdfs:subClassOf dcat:Role .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#AttributionRoleValue
+dcat_ufo_mlt:AttributionRoleValue rdf:type owl:Class ;
+                                  rdfs:subClassOf gufo:QualityValue ;
+                                  rdfs:label "AttributionRoleValue"@en .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#Collection
+dcat_ufo_mlt:Collection rdf:type owl:Class ;
+                        rdfs:subClassOf dcat:Catalog .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DataResourceType
+dcat_ufo_mlt:DataResourceType rdf:type owl:Class ;
+                              rdfs:subClassOf dcat_ufo_mlt:ResourceType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DatasetOwnership
+dcat_ufo_mlt:DatasetOwnership rdf:type owl:Class ;
+                              rdfs:subClassOf gufo:Relator .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DatasetType
+dcat_ufo_mlt:DatasetType rdf:type owl:Class ;
+                         rdfs:subClassOf dcat_ufo_mlt:DataResourceType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DatasetTypeByDistribution
+dcat_ufo_mlt:DatasetTypeByDistribution rdf:type owl:Class ;
+                                       rdfs:subClassOf dcat_ufo_mlt:DatasetType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DatasetTypeByDistributionsEquivalenceLevel
+dcat_ufo_mlt:DatasetTypeByDistributionsEquivalenceLevel rdf:type owl:Class ;
+                                                        rdfs:subClassOf dcat_ufo_mlt:DatasetType ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty endml:isSubordinatedTo ;
+                                                                          owl:someValuesFrom dcat_ufo_mlt:DatasetTypeByEquivalenceDistributions
+                                                                        ] .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DatasetTypeByEquivalenceDistributions
+dcat_ufo_mlt:DatasetTypeByEquivalenceDistributions rdf:type owl:Class ;
+                                                   rdfs:subClassOf dcat_ufo_mlt:DatasetType ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty endml:isSubordinatedTo ;
+                                                                     owl:someValuesFrom dcat_ufo_mlt:DatasetTypeByDistribution
+                                                                   ] .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#FullyEquivalentDistributionsDataset
+dcat_ufo_mlt:FullyEquivalentDistributionsDataset rdf:type owl:Class ;
+                                                 rdfs:subClassOf dcat_ufo_mlt:MultiDistributionDataset ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty [ owl:inverseOf gufo:inheresIn
+                                                                                  ] ;
+                                                                   owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                   owl:onClass dcat:Distribution
+                                                                 ] ;
+                                                 owl:disjointWith dcat_ufo_mlt:NotFullyEquivalentDistributionsDataset .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#MultiDistributionDataset
+dcat_ufo_mlt:MultiDistributionDataset rdf:type owl:Class ;
+                                      rdfs:subClassOf dcat:Dataset ;
+                                      owl:disjointWith dcat_ufo_mlt:SingleDistributionDataset .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#NonEquivalentDistributionsDataset
+dcat_ufo_mlt:NonEquivalentDistributionsDataset rdf:type owl:Class ;
+                                               rdfs:subClassOf dcat_ufo_mlt:NotFullyEquivalentDistributionsDataset ;
+                                               owl:disjointWith dcat_ufo_mlt:SemiEquivalentDistributionsDataset .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#NotFullyEquivalentDistributionsDataset
+dcat_ufo_mlt:NotFullyEquivalentDistributionsDataset rdf:type owl:Class ;
+                                                    rdfs:subClassOf dcat_ufo_mlt:MultiDistributionDataset ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty dct:hasPart ;
+                                                                      owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                      owl:onClass dcat:Dataset
+                                                                    ] .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#PowertypeClass
+dcat_ufo_mlt:PowertypeClass rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( gufo:Type
+                                                                       [ rdf:type owl:Class ;
+                                                                         owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty endml:isPowertypeOf ;
+                                                                                         owl:someValuesFrom gufo:ConcreteIndividualType
+                                                                                       ]
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty endml:isPowertypeOf ;
+                                                                                         owl:someValuesFrom endml:SecondOrderType
+                                                                                       ]
+                                                                                     )
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:label "PowertypeClass"@en .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#RelationRole
+dcat_ufo_mlt:RelationRole rdf:type owl:Class ;
+                          rdfs:subClassOf dcat:Role ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty endml:characterizes ;
+                                            owl:someValuesFrom dcat:Relationship
+                                          ] .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#RelationRoleValue
+dcat_ufo_mlt:RelationRoleValue rdf:type owl:Class ;
+                               rdfs:subClassOf gufo:QualityValue ;
+                               rdfs:label "RelationRoleValue"@en .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#ResourceType
+dcat_ufo_mlt:ResourceType rdf:type owl:Class ;
+                          rdfs:subClassOf endml:FunctionalComplexType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#SemiEquivalentDistributionsDataset
+dcat_ufo_mlt:SemiEquivalentDistributionsDataset rdf:type owl:Class ;
+                                                rdfs:subClassOf dcat_ufo_mlt:NotFullyEquivalentDistributionsDataset .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#SingleDistributionDataset
+dcat_ufo_mlt:SingleDistributionDataset rdf:type owl:Class ;
+                                       rdfs:subClassOf dcat:Dataset ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty [ owl:inverseOf gufo:inheresIn
+                                                                        ] ;
+                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onClass dcat:Distribution
+                                                       ] .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#SourceType
+dcat_ufo_mlt:SourceType rdf:type owl:Class ;
+                        rdfs:subClassOf dcat_ufo_mlt:ResourceType ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty [ owl:inverseOf endml:mediation
+                                                         ] ;
+                                          owl:someValuesFrom dcat:Relationship
+                                        ] .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#TargetDatasetType
+dcat_ufo_mlt:TargetDatasetType rdf:type owl:Class ;
+                               rdfs:subClassOf dcat_ufo_mlt:DatasetType ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty [ owl:inverseOf endml:mediation
+                                                                ] ;
+                                                 owl:someValuesFrom dcat:Relationship
+                                               ] .
+
+
+###  http://www.w3.org/ns/dcat#Catalog
+dcat:Catalog rdf:type owl:Class ;
+             rdfs:subClassOf dcat:Dataset ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty dct:hasPart ;
+                               owl:someValuesFrom dcat:Resource
+                             ] .
+
+
+###  http://www.w3.org/ns/dcat#CatalogRecord
+dcat:CatalogRecord rdf:type owl:Class ;
+                   rdfs:subClassOf gufo:Relator ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty gufo:mediates ;
+                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass dcat:Catalog
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty gufo:mediates ;
+                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass dcat:Resource
+                                   ] .
+
+
+###  http://www.w3.org/ns/dcat#DataService
+dcat:DataService rdf:type owl:Class ;
+                 rdfs:subClassOf dcat:Resource ;
+                 owl:disjointWith dcat:Dataset .
+
+
+###  http://www.w3.org/ns/dcat#Dataset
+dcat:Dataset rdf:type owl:Class ;
+             rdfs:subClassOf dcat:Resource .
+
+
+###  http://www.w3.org/ns/dcat#Distribution
+dcat:Distribution rdf:type owl:Class ;
+                  rdfs:subClassOf gufo:IntrinsicMode ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty gufo:inheresIn ;
+                                    owl:someValuesFrom dcat:Dataset
+                                  ] .
+
+
+###  http://www.w3.org/ns/dcat#Relationship
+dcat:Relationship rdf:type owl:Class ;
+                  rdfs:subClassOf endml:RelatorType ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty endml:mediation ;
+                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass dcat_ufo_mlt:SourceType
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty endml:mediation ;
+                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass dcat_ufo_mlt:TargetDatasetType
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty [ owl:inverseOf endml:characterizes
+                                                   ] ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass dcat_ufo_mlt:RelationRole
+                                  ] .
+
+
+###  http://www.w3.org/ns/dcat#Resource
+dcat:Resource rdf:type owl:Class ;
+              rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  http://www.w3.org/ns/dcat#Role
+dcat:Role rdf:type owl:Class ;
+          rdfs:subClassOf endml:QualityType .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://id.loc.gov/vocabulary/relationship/#basedon
+marcr:basedon rdf:type owl:NamedIndividual ,
+                       dcat_ufo_mlt:RelationRoleValue ;
+              rdfs:label "Based On"@en .
+
+
+###  http://id.loc.gov/vocabulary/relationship/#complementedby
+marcr:complementedby rdf:type owl:NamedIndividual ,
+                              dcat_ufo_mlt:RelationRoleValue ;
+                     rdfs:label "Complemented By"@en .
+
+
+###  http://id.loc.gov/vocabulary/relationship/#replacedby
+marcr:replacedby rdf:type owl:NamedIndividual ,
+                          dcat_ufo_mlt:RelationRoleValue ;
+                 rdfs:label "Replaced By"@en .
+
+
+###  http://id.loc.gov/vocabulary/relationship/#sequentialversion
+marcr:sequentialversion rdf:type owl:NamedIndividual ,
+                                 dcat_ufo_mlt:RelationRoleValue ;
+                        rdfs:label "Sequential Version"@en .
+
+
+###  http://id.loc.gov/vocabulary/relators/#own
+marcrel:own rdf:type owl:NamedIndividual ,
+                     dcat_ufo_mlt:RelationRoleValue ;
+            rdfs:label "Owner"@en .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#AttributionRole
+dcat_ufo_mlt:AttributionRole rdf:type owl:NamedIndividual ,
+                                      endml:HighOrderSubKind ,
+                                      endml:SecondOrderType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#Collection
+dcat_ufo_mlt:Collection rdf:type owl:NamedIndividual ,
+                                 dcat_ufo_mlt:DatasetType ,
+                                 dcat_ufo_mlt:SourceType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DataResourceType
+dcat_ufo_mlt:DataResourceType rdf:type owl:NamedIndividual ,
+                                       endml:HighOrderKind ,
+                                       endml:SecondOrderType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DatasetOwnership
+dcat_ufo_mlt:DatasetOwnership rdf:type owl:NamedIndividual ,
+                                       dcat:Relationship ;
+                              dcat_ufo_mlt:hadRelationRole marcrel:own .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DatasetType
+dcat_ufo_mlt:DatasetType rdf:type owl:NamedIndividual ,
+                                  endml:HighOrderSubKind ,
+                                  endml:SecondOrderType ;
+                         endml:isPowertypeOf dcat:Dataset .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DatasetTypeByDistribution
+dcat_ufo_mlt:DatasetTypeByDistribution rdf:type owl:NamedIndividual ,
+                                                endml:HighOrderSubKind ,
+                                                endml:SecondOrderType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DatasetTypeByDistributionsEquivalenceLevel
+dcat_ufo_mlt:DatasetTypeByDistributionsEquivalenceLevel rdf:type owl:NamedIndividual ,
+                                                                 endml:HighOrderSubKind ,
+                                                                 endml:SecondOrderType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#DatasetTypeByEquivalenceDistributions
+dcat_ufo_mlt:DatasetTypeByEquivalenceDistributions rdf:type owl:NamedIndividual ,
+                                                            endml:HighOrderSubKind ,
+                                                            endml:SecondOrderType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#FullyEquivalentDistributionsDataset
+dcat_ufo_mlt:FullyEquivalentDistributionsDataset rdf:type owl:NamedIndividual ,
+                                                          gufo:ConcreteIndividualType ,
+                                                          gufo:SubKind ,
+                                                          dcat_ufo_mlt:DatasetType ,
+                                                          dcat_ufo_mlt:DatasetTypeByEquivalenceDistributions ,
+                                                          dcat_ufo_mlt:ResourceType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#MultiDistributionDataset
+dcat_ufo_mlt:MultiDistributionDataset rdf:type owl:NamedIndividual ,
+                                               gufo:ConcreteIndividualType ,
+                                               gufo:SubKind ,
+                                               dcat_ufo_mlt:DatasetType ,
+                                               dcat_ufo_mlt:DatasetTypeByDistribution ,
+                                               dcat_ufo_mlt:ResourceType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#NonEquivalentDistributionsDataset
+dcat_ufo_mlt:NonEquivalentDistributionsDataset rdf:type owl:NamedIndividual ,
+                                                        gufo:ConcreteIndividualType ,
+                                                        gufo:SubKind ,
+                                                        dcat_ufo_mlt:DatasetType ,
+                                                        dcat_ufo_mlt:DatasetTypeByDistributionsEquivalenceLevel ,
+                                                        dcat_ufo_mlt:ResourceType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#NotFullyEquivalentDistributionsDataset
+dcat_ufo_mlt:NotFullyEquivalentDistributionsDataset rdf:type owl:NamedIndividual ,
+                                                             gufo:ConcreteIndividualType ,
+                                                             gufo:SubKind ,
+                                                             dcat_ufo_mlt:DatasetType ,
+                                                             dcat_ufo_mlt:DatasetTypeByEquivalenceDistributions ,
+                                                             dcat_ufo_mlt:ResourceType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#RelationRole
+dcat_ufo_mlt:RelationRole rdf:type owl:NamedIndividual ,
+                                   endml:HighOrderSubKind ,
+                                   endml:SecondOrderType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#ResourceType
+dcat_ufo_mlt:ResourceType rdf:type owl:NamedIndividual ,
+                                   endml:HighOrderCategory ,
+                                   endml:SecondOrderType ;
+                          endml:isPowertypeOf dcat:Resource .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#SemiEquivalentDistributionsDataset
+dcat_ufo_mlt:SemiEquivalentDistributionsDataset rdf:type owl:NamedIndividual ,
+                                                         gufo:ConcreteIndividualType ,
+                                                         gufo:SubKind ,
+                                                         dcat_ufo_mlt:DatasetType ,
+                                                         dcat_ufo_mlt:DatasetTypeByDistributionsEquivalenceLevel ,
+                                                         dcat_ufo_mlt:ResourceType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#SingleDistributionDataset
+dcat_ufo_mlt:SingleDistributionDataset rdf:type owl:NamedIndividual ,
+                                                gufo:ConcreteIndividualType ,
+                                                gufo:SubKind ,
+                                                dcat_ufo_mlt:DatasetType ,
+                                                dcat_ufo_mlt:DatasetTypeByDistribution ,
+                                                dcat_ufo_mlt:ResourceType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#SourceType
+dcat_ufo_mlt:SourceType rdf:type owl:NamedIndividual ,
+                                 endml:HighOrderRoleMixin ,
+                                 endml:SecondOrderType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#TargetDatasetType
+dcat_ufo_mlt:TargetDatasetType rdf:type owl:NamedIndividual ,
+                                        endml:HighOrderRole ,
+                                        endml:SecondOrderType .
+
+
+###  http://www.greco.ufrj.br/dcat_ufo_mlt#datasetOwnership
+dcat_ufo_mlt:datasetOwnership rdf:type owl:NamedIndividual ,
+                                       gufo:MaterialRelationshipType .
+
+
+###  http://www.greco.ufrj.br/example#COVID19_Collection
+ex:COVID19_Collection rdf:type owl:NamedIndividual ,
+                               gufo:Individual ,
+                               dcat_ufo_mlt:Collection ;
+                      dcat_ufo_mlt:datasetOwnership ex:Hosp1_COVID19_CSV_2021 ,
+                                                    ex:Hosp1_COVID19_Dataset ;
+                      dcat:dataset ex:Hosp1_COVID19_CSV_2021 ,
+                                   ex:Hosp1_COVID19_Dataset ;
+                      dc:title "Collection COVID-19"^^rdfs:Literal ;
+                      rdfs:label "Collection COVID-19"^^rdfs:Literal .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_COVID19_CSV_2021
+ex:Hosp1_COVID19_CSV_2021 rdf:type owl:NamedIndividual ,
+                                   gufo:Individual ,
+                                   dcat_ufo_mlt:NonEquivalentDistributionsDataset ;
+                          dct:hasPart ex:Hosp1_Exam_2021 ,
+                                      ex:Hosp1_Outcome_2021 ,
+                                      ex:Hosp1_Patient_2021 ;
+                          dc:title "Hospital1 COVID-19 CSV Dataset"^^rdfs:Literal ;
+                          dct:license <https://creativecommons.org/licenses/by-nc/3.0/br/> ;
+                          rdfs:label "Hospital1_COVID19 CSV Dataset"^^rdfs:Literal .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_COVID19_Dataset
+ex:Hosp1_COVID19_Dataset rdf:type owl:NamedIndividual ,
+                                  gufo:Individual ,
+                                  dcat_ufo_mlt:NonEquivalentDistributionsDataset ;
+                         dct:hasPart ex:Hosp1_COVID19_CSV_2021 ,
+                                     ex:Hosp1_COVID19_ttl ;
+                         dc:title "Hospital1 COVID-19 Dataset"^^rdfs:Literal ;
+                         dct:license <https://creativecommons.org/licenses/by-nc/3.0/br/> ;
+                         rdfs:label "Hospital1_COVID19 Dataset"^^rdfs:Literal .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_COVID19_ttl
+ex:Hosp1_COVID19_ttl rdf:type owl:NamedIndividual ,
+                              gufo:Individual ,
+                              dcat_ufo_mlt:NonEquivalentDistributionsDataset ;
+                     dct:hasPart ex:Hosp1_Provenance ,
+                                 ex:Hosp1_WHO_COVID19_CRF ;
+                     dc:title "Hospital1 COVID-19 ttl Dataset"^^rdfs:Literal ;
+                     dct:license <https://creativecommons.org/licenses/by-nc/3.0/br/> ;
+                     rdfs:label "Hospital1_COVID19 ttl Dataset"^^rdfs:Literal .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_Collection
+ex:Hosp1_Collection rdf:type owl:NamedIndividual ,
+                             gufo:Individual ,
+                             dcat_ufo_mlt:Collection ;
+                    dcat:dataset ex:Hosp1_COVID19_CSV_2021 ;
+                    dc:title "Collection COVID-19"^^rdfs:Literal ;
+                    rdfs:label "Collection COVID-19"^^rdfs:Literal .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_Exam_2021
+ex:Hosp1_Exam_2021 rdf:type owl:NamedIndividual ,
+                            gufo:Individual ,
+                            dcat_ufo_mlt:SingleDistributionDataset ;
+                   dcat:distribution ex:Hosp1_Exam_2021_CSV ;
+                   dcat:theme <http://purl.bioontology.org/ontology/MESH/D012699> ,
+                              <http://purl.obolibrary.org/obo/LABO_0000109> ,
+                              <http://purl.obolibrary.org/obo/OBI_0000406> .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_Exam_2021_CSV
+ex:Hosp1_Exam_2021_CSV rdf:type owl:NamedIndividual ,
+                                gufo:Individual ,
+                                dcat:Distribution ;
+                       dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+                       dct:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
+                       dcat:byteSize "441,23MB"@en .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_Outcome_2021
+ex:Hosp1_Outcome_2021 rdf:type owl:NamedIndividual ,
+                               gufo:Individual ,
+                               dcat_ufo_mlt:SingleDistributionDataset ;
+                      dcat:distribution ex:Hosp1_Outcome_2021_CSV ;
+                      dcat:theme <http://purl.obolibrary.org/obo/NCIT_C25166> .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_Outcome_2021_CSV
+ex:Hosp1_Outcome_2021_CSV rdf:type owl:NamedIndividual ,
+                                   gufo:Individual ,
+                                   dcat:Distribution ;
+                          dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+                          dct:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
+                          dcat:byteSize "12,652MB"@en .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_Patient_2021
+ex:Hosp1_Patient_2021 rdf:type owl:NamedIndividual ,
+                               gufo:Individual ,
+                               dcat_ufo_mlt:SingleDistributionDataset ;
+                      dcat:distribution ex:Hosp1_Patient_2021_CSV ;
+                      dcat:theme <http://purl.obolibrary.org/obo/NCIT_C124436> ,
+                                 <http://purl.obolibrary.org/obo/NCIT_C16960> ,
+                                 <http://purl.obolibrary.org/obo/NCIT_C25150> ,
+                                 <http://purl.obolibrary.org/obo/NCIT_C68615> .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_Patient_2021_CSV
+ex:Hosp1_Patient_2021_CSV rdf:type owl:NamedIndividual ,
+                                   gufo:Individual ,
+                                   dcat:Distribution ;
+                          dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+                          dct:mediaType <http://www.iana.org/assignments/media-types/text/csv> ;
+                          dcat:byteSize "0,87MB"@en .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_Provenance
+ex:Hosp1_Provenance rdf:type owl:NamedIndividual ,
+                             gufo:Individual ,
+                             dcat_ufo_mlt:SingleDistributionDataset ;
+                    dct:conformsTo <http://www.w3.org/ns/prov> ;
+                    dcat:distribution ex:Hosp1_Provenance_ttl .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_Provenance_ttl
+ex:Hosp1_Provenance_ttl rdf:type owl:NamedIndividual ,
+                                 gufo:Individual ,
+                                 dcat:Distribution ;
+                        dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
+                        dct:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+                        dcat:byteSize "440MB"@en .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_WHO_COVID19_CRF
+ex:Hosp1_WHO_COVID19_CRF rdf:type owl:NamedIndividual ,
+                                  gufo:Individual ,
+                                  dcat_ufo_mlt:SingleDistributionDataset ;
+                         dct:conformsTo <https://bioportal.bioontology.org/ontologies/COVIDCRFRAPID> ;
+                         dcat:distribution ex:Hosp1_WHO_COVID19_CRF_ttl ;
+                         dcat:theme <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25190> ,
+                                    <http://purl.bioontology.org/ontology/SNOMEDCT/125676002> ,
+                                    <http://purl.org/net/OCRe/OCRe.owl#OCRE400076> ,
+                                    <http://purl.org/vodan/whocovid19crfsemdatamodel/who-covid-19-rapid-crf> ,
+                                    <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.greco.ufrj.br/example#Hosp1_WHO_COVID19_CRF_ttl
+ex:Hosp1_WHO_COVID19_CRF_ttl rdf:type owl:NamedIndividual ,
+                                      gufo:Individual ,
+                                      dcat:Distribution ;
+                             dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
+                             dct:mediaType <https://www.iana.org/assignments/media-types/text/turtle> ;
+                             dcat:byteSize "850MB"@en .
+
+
+###  http://www.w3.org/ns/dcat#Catalog
+dcat:Catalog rdf:type owl:NamedIndividual ,
+                      gufo:ConcreteIndividualType ,
+                      gufo:SubKind ,
+                      dcat_ufo_mlt:DatasetType ,
+                      dcat_ufo_mlt:ResourceType .
+
+
+###  http://www.w3.org/ns/dcat#CatalogRecord
+dcat:CatalogRecord rdf:type owl:NamedIndividual ,
+                            gufo:ConcreteIndividualType ,
+                            gufo:Kind ,
+                            endml:RelatorType .
+
+
+###  http://www.w3.org/ns/dcat#DataService
+dcat:DataService rdf:type owl:NamedIndividual ,
+                          gufo:ConcreteIndividualType ,
+                          gufo:Kind ,
+                          dcat_ufo_mlt:DataResourceType ,
+                          dcat_ufo_mlt:ResourceType .
+
+
+###  http://www.w3.org/ns/dcat#Dataset
+dcat:Dataset rdf:type owl:NamedIndividual ,
+                      gufo:ConcreteIndividualType ,
+                      gufo:Kind ,
+                      dcat_ufo_mlt:DataResourceType ,
+                      dcat_ufo_mlt:DatasetType ,
+                      dcat_ufo_mlt:ResourceType ,
+                      dcat_ufo_mlt:TargetDatasetType .
+
+
+###  http://www.w3.org/ns/dcat#Distribution
+dcat:Distribution rdf:type owl:NamedIndividual ,
+                           gufo:ConcreteIndividualType ,
+                           gufo:Kind ,
+                           endml:IntrinsicModeType .
+
+
+###  http://www.w3.org/ns/dcat#Relationship
+dcat:Relationship rdf:type owl:NamedIndividual ,
+                           endml:HighOrderKind ,
+                           endml:SecondOrderType .
+
+
+###  http://www.w3.org/ns/dcat#Resource
+dcat:Resource rdf:type owl:NamedIndividual ,
+                       gufo:Category ,
+                       dcat_ufo_mlt:ResourceType .
+
+
+###  http://www.w3.org/ns/dcat#Role
+dcat:Role rdf:type owl:NamedIndividual ,
+                   endml:HighOrderKind ,
+                   endml:SecondOrderType .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+dcat_ufo_mlt:AttributionRole rdfs:label "AttributionRole"@en .
+
+
+dcat_ufo_mlt:DataResourceType rdfs:label "DataResourceType"@en ;
+                              gufo:partitions dcat:Resource .
+
+
+dcat_ufo_mlt:DatasetOwnership rdfs:label "Dataset Ownership"@en .
+
+
+dcat_ufo_mlt:DatasetType rdfs:label "DatasetType"@en .
+
+
+dcat_ufo_mlt:DatasetTypeByDistribution gufo:partitions dcat:Dataset ;
+                                       rdfs:label "DatasetTypeByDistribution"@en .
+
+
+dcat_ufo_mlt:DatasetTypeByDistributionsEquivalenceLevel rdfs:label "DatasetTypeByDistributionsEquivalenceLevel"@en ;
+                                                        gufo:partitions dcat_ufo_mlt:NotFullyEquivalentDistributionsDataset .
+
+
+dcat_ufo_mlt:DatasetTypeByEquivalenceDistributions gufo:partitions dcat_ufo_mlt:MultiDistributionDataset ;
+                                                   rdfs:label "DatasetTypeByEquivalenceDistributions"@en .
+
+
+dcat_ufo_mlt:FullyEquivalentDistributionsDataset rdfs:label "FullyEquivalentDistributionsDataset"@en .
+
+
+dcat_ufo_mlt:MultiDistributionDataset rdfs:label "MultiDistributionDataset"@en .
+
+
+dcat_ufo_mlt:NonEquivalentDistributionsDataset rdfs:label "NonEquivalentDistributionsDataset"@en .
+
+
+dcat_ufo_mlt:NotFullyEquivalentDistributionsDataset rdfs:label "NotFullyEquivalentDistributionsDataset"@en .
+
+
+dcat_ufo_mlt:RelationRole rdfs:label "RelationRole"@en .
+
+
+dcat_ufo_mlt:ResourceType rdfs:label "ResourceType"@en .
+
+
+dcat_ufo_mlt:SemiEquivalentDistributionsDataset rdfs:label "SemiEquivalentDistributionsDataset"@en .
+
+
+dcat_ufo_mlt:SingleDistributionDataset rdfs:label "SingleDistributionDataset"@en .
+
+
+dcat_ufo_mlt:SourceType rdfs:label "SourceType"@en .
+
+
+dcat_ufo_mlt:TargetDatasetType rdfs:label "TargetDatasetType"@en .
+
+
+dcat_ufo_mlt:datasetOwnership gufo:isDerivedFrom dcat_ufo_mlt:DatasetOwnership .
+
+
+dcat:Catalog rdfs:label "dcat:Catalog"@en .
+
+
+dcat:CatalogRecord rdfs:label "dcat:CatalogRecord"@en .
+
+
+dcat:DataService rdfs:label "dcat:DataService"@en .
+
+
+dcat:Dataset rdfs:label "dcat:Dataset"@en .
+
+
+dcat:Distribution rdfs:label "dcat:Distribution"@en .
+
+
+dcat:Relationship rdfs:label "dcat:Relationship"@en .
+
+
+dcat:Resource rdfs:label "dcat:Resource"@en .
+
+
+dcat:Role rdfs:label "dcat:Role"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
